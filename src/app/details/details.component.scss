@@ -1,0 +1,14 @@
+#details {
+  width: 500px;
+  height: 500px;
+  background-color: whitesmoke;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 5px 5px 20px rgba(28, 46, 82, 0.15);
+  }
+}

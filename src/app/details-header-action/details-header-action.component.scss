@@ -1,0 +1,14 @@
+.details-portal {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 16px;
+  color: white;
+
+  > span, > a {
+    text-align: center;
+  }
+}
