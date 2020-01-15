@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PortalService} from "../portal.service";
-import {CdkPortalOutlet, ComponentPortal, TemplatePortal} from "@angular/cdk/portal";
+import {CdkPortalOutlet, ComponentPortal, TemplatePortal} from '@angular/cdk/portal';
+
+import {PortalService} from '../portal.service';
 
 @Component({
   selector: 'app-header',
