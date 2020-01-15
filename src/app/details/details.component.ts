@@ -1,7 +1,8 @@
-import {AfterViewInit, ApplicationRef, Component, ComponentFactoryResolver, Injector} from '@angular/core';
-import {DomPortalOutlet, ComponentPortal} from '@angular/cdk/portal';
+import {AfterViewInit, Component} from '@angular/core';
+import {ComponentPortal} from '@angular/cdk/portal';
 
 import {DetailsHeaderActionComponent} from '../details-header-action/details-header-action.component';
+import {PortalService} from '../portal.service';
 
 @Component({
   selector: 'app-details',
@@ -14,20 +15,10 @@ import {DetailsHeaderActionComponent} from '../details-header-action/details-hea
 })
 export class DetailsComponent implements AfterViewInit {
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
-              private injector: Injector,
-              private appRef: ApplicationRef) {
+  constructor(private portalService: PortalService) {
   }
 
   ngAfterViewInit() {
-    const portalTag = document.querySelector('#portal-outlet');
-    const portalOutlet = new DomPortalOutlet(
-      portalTag,
-      this.componentFactoryResolver,
-      this.appRef,
-      this.injector
-    );
-    portalTag.innerHTML = '';
-    portalOutlet.attach(new ComponentPortal(DetailsHeaderActionComponent));
+    this.portalService.setPortal(new ComponentPortal(DetailsHeaderActionComponent));
   }
 }
