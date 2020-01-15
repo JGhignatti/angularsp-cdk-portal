@@ -11,7 +11,7 @@ import {PortalService} from '../portal.service';
     </div>
 
     <div class="home-portal" *cdkPortal>
-        <span>This section is a template at home component and it is being rendered via portal.</span>
+      <span>This section is a template at home component and it is being rendered via portal.</span>
       <a [routerLink]="'./details'">Go to details</a>
     </div>
   `,
